@@ -2,11 +2,6 @@ package com.example.gui;
 import com.example.backend.Client;
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Style;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -23,7 +18,7 @@ public class ChatRoom extends JFrame implements ActionListener{
     public ChatRoom(String user, String rname) {
         setContentPane(MainPanel);
         setTitle("ChatRoom");
-        setSize(600, 400);
+        setSize(600, 450);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Only closes this window
         setLocationRelativeTo(null);
 

@@ -38,8 +38,4 @@ public class Client {
         clientmessage = outmessage;
         out.println(clientmessage);
     }
-//
-//    public void getdetails(String user) {
-//        String name = user;
-//    }
 }

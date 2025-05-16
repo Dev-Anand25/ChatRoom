@@ -104,9 +104,9 @@ public class Join extends JDialog {
             stmt.setString(2, pass);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                dispose();
                 ChatRoom chatRoom = new ChatRoom(user, rname);
                 chatRoom.setVisible(true);
+                dispose();
             } else {
                 tryAgainLabel.setText("Try Again. Incorrect Password");
                 txtName.setText("");
