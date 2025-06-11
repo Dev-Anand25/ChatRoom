@@ -77,13 +77,13 @@ public class CreateRoom extends JDialog implements ActionListener {
             // Ensure table exists before inserting
             String createTableQuery = "CREATE TABLE IF NOT EXISTS chatroom (" +
                     "id SERIAL PRIMARY KEY, " +
-                    "RoomName VARCHAR(50) NOT NULL, " +
-                    "Password VARCHAR(50) NOT NULL)";
+                    "roomname VARCHAR(50) NOT NULL, " +
+                    "roompassword VARCHAR(50) NOT NULL)";
             Statement createStmt = conn.createStatement();
             createStmt.execute(createTableQuery);
 
             // Insert into chatroom table
-            String insertQuery = "INSERT INTO chatroom(RoomName, Password) VALUES (?, ?)";
+            String insertQuery = "INSERT INTO chatroom(roomname, roompassword) VALUES (?, ?)";
             PreparedStatement stmt = conn.prepareStatement(insertQuery);
             stmt.setString(1, rname);
             stmt.setString(2, pass);

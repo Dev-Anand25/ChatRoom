@@ -67,15 +67,16 @@ public class Join extends JDialog {
         String URL = "jdbc:postgresql://localhost:5432/postgres";
         String username = "postgres";
         String password = "postgrepass";
+
         try {
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(URL, username, password);
             System.out.println("Connected to the PostgreSQL server successfully.");
 
-            String createTableQuery = "CREATE TABLE IF NOT EXISTS ChatRoom (" +
+            String createTableQuery = "CREATE TABLE IF NOT EXISTS chatroom (" +
                     "id SERIAL PRIMARY KEY, " +
-                    "RoomName VARCHAR(50) NOT NULL, " +
-                    "Password VARCHAR(50) NOT NULL" +
+                    "roomname VARCHAR(50) NOT NULL, " +
+                    "roompassword VARCHAR(50) NOT NULL" +
                     ");";
 
             Statement stmt = conn.createStatement();
@@ -97,7 +98,7 @@ public class Join extends JDialog {
             return;
         }
 
-        String query = "SELECT * FROM chatroom WHERE RoomName = ? AND Password = ?;";
+        String query = "SELECT * FROM chatroom WHERE roomname = ? AND roompassword = ?;";
         try {
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, rname);
